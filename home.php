@@ -1,14 +1,14 @@
 <?php
-	$ldap_dn = "cn=admin,dc=ldap,dc=com";
-	$ldap_pass = "jangkrik";
+	$ldap_dn = "cn=admin,dc=openldap,dc=com";
+	$ldap_pass = "root";
 
-	$ldap_con = ldap_connect("192.168.1.169",389);
+	$ldap_con = ldap_connect("10.0.2.15",389);
 
 	ldap_set_option($ldap_con, LDAP_OPT_PROTOCOL_VERSION, 3);
 
 	if (ldap_bind($ldap_con,$ldap_dn,$ldap_pass)) {
 		$cari = "(objectclass=inetOrgPerson)";
-		$hasil = ldap_search($ldap_con, "dc=ldap,dc=com", $cari) or exit("tidak ada data");
+		$hasil = ldap_search($ldap_con, "dc=openldap,dc=com", $cari) or exit("tidak ada data");
 		$data = ldap_get_entries($ldap_con, $hasil);
        
        
@@ -24,7 +24,7 @@
             }
         }
 	}else{
-		echo "gagal cuk";
+		echo "gagal";
 	}
 
 ?>
