@@ -1,5 +1,5 @@
- <?php
- $ldap['user'] = "cn=admin,dc=openldap,dc=com";
+<?php
+$ldap['user'] = "cn=admin,dc=openldap,dc=com";
 $ldap['pass'] = "root";
 $ldap['host']   = '10.0.2.15';
 $ldap['port']   = 389;
