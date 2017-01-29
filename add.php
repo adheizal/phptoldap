@@ -11,11 +11,11 @@
     $r = ldap_bind($ds, $ldap_dn, $ldap_pass);
 
     // prepare data
-    $info["cn"] = "(input type="text" name="cn")";
-    $info["sn"] = "(input type="text" name="sn")";
-    $info["objectclass"] = "(input type="text" value="inetOrgPerson" name="cn")";
-    $info["userPassword"] = '{SHA}' . base64_encode(pack('H*',sha1("input type="text" name="userPassword")));;
-    $info["uid"] = "(input type="text" name="uid")";
+    $info["cn"] = "";$form = '<input type="text" name="'.$nama.'" value="'.$isi.'" />';
+    $info["sn"] = "";
+    $info["objectclass"] = "inetOrgPerson";
+    $info["userPassword"] = '{SHA}' . base64_encode(pack('H*',sha1));;
+    $info["uid"] = "";
 
     // add data to directory
     $r = ldap_add($ds, "cn=user-group,ou=user,cn=admin,dc=openldap,dc=com", $info);
