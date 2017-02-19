@@ -1,7 +1,7 @@
 <?php
-$ldap['user'] = "cn=admin,dc=openldap,dc=com";
+$ldap['user'] = "cn=admin,dc=example,dc=com";
 $ldap['pass'] = "root";
-$ldap['host']   = '10.0.2.15';
+$ldap['host']   = '192.168.100.1';
 $ldap['port']   = 389;
  
 $ldap['conn'] = ldap_connect( $ldap['host'], $ldap['port'] )
