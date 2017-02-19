@@ -1,8 +1,8 @@
 <?php
-	$ldap_dn = "cn=admin,dc=openldap,dc=com";
+	$ldap_dn = "cn=admin,dc=example,dc=com";
 	$ldap_pass = "root";
 
-	$ds = ldap_connect("10.0.2.15",389);
+	$ds = ldap_connect("192.168.100.1",389);
 
 	ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
 	
@@ -18,7 +18,7 @@
     $info["uid"] = "";
 
     // add data to directory
-    $r = ldap_add($ds, "cn=user-group,ou=user,cn=admin,dc=openldap,dc=com", $info);
+    $r = ldap_add($ds, "cn=user-group,ou=user,cn=admin,dc=example,dc=com", $info);
 
     ldap_close($ds);
 } else {
